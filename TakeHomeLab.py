@@ -8,20 +8,18 @@ def play():
     keep_playing = 'y'
     cash = 100
     bet = 10
-    
-    
     while(keep_playing == 'y'):
         print_starting_balance(cash)
         cash = play_a_game(cash,bet)
         print_balance(cash)
-        keep_playing = play_again()      
+        keep_playing = play_again()
 def play_a_game(cash,bet):
     point = 0
     dicerolls = []
     # First Roll
     num = rolldice(1,6)
     dicerolls.append(num)
-    
+
     if(automatic_win(num)):
         print_outcome(automatic_win(num),dicerolls)
         cash+=bet
